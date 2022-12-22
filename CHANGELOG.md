@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/leonardoce/testconn/compare/v1.2.0...v1.3.0) (2022-12-22)
+
+
+### Features
+
+* workflow manual dispatch on image building ([eb23b92](https://github.com/leonardoce/testconn/commit/eb23b92db4578e4aa2d98fe622bfe428550075d4))
+
+
+### Bug Fixes
+
+* workflow name ([1738761](https://github.com/leonardoce/testconn/commit/17387613950cfc1749d40488eca16ca75642e485))
+
 ## [1.2.0](https://github.com/leonardoce/testconn/compare/v1.1.0...v1.2.0) (2022-12-22)
 
 
