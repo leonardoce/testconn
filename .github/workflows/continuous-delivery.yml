@@ -27,16 +27,3 @@ jobs:
           go-version: '>=1.19.0'
       - run: make test
         name: "Unit tests"
-
-  build:
-    runs-on: ubuntu-latest
-    needs:
-    - lint
-    - unit-tests
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
-        with:
-          go-version: '>=1.19.0'
-      - run: make image
-        name: "Docker image"
