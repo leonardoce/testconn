@@ -39,7 +39,7 @@ type TrackingResponseWriter struct {
 	inner      http.ResponseWriter
 }
 
-// Headers implements the http.ResponseWriter interface
+// Header implements the http.ResponseWriter interface
 func (w *TrackingResponseWriter) Header() http.Header {
 	return w.inner.Header()
 }

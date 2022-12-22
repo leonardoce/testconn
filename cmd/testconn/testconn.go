@@ -1,3 +1,4 @@
+// Package testconn implements the main command
 package testconn
 
 import (
