@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: testconn
+  name: testconn
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testconn
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testconn
+    spec:
+      containers:
+      - image: ghcr.io/leonardoce/testconn:v1.4.0
+        name: testconn
+        command:
+        - /app/bin/testconn
+        env:
+        - name: PGHOST
+          value: testconn-rw
+        - name: PGDATABASE
+          value: app
+        - name: PGUSER
+          value: app
+        - name: PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: testconn-app
+              key: password
+        livenessProbe:
+          httpGet:
+            path: /livez
+            port: 8000
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8000
+        resources: {}
+status: {}

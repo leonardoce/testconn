@@ -10,3 +10,5 @@ It exposes just a few entrypoints:
 
 This application must not be used as a reference, but it is just meant to
 explain the meaning of Kubernetes probes.
+
+Some example Kubernetes definitions can be found in the `k8s` directory.
