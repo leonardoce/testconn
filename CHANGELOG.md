@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/leonardoce/testconn/compare/v1.0.1...v1.1.0) (2022-12-22)
+
+
+### Features
+
+* push images to ghcr ([be4810b](https://github.com/leonardoce/testconn/commit/be4810b269f841866ae4bc62015b1160e32fca5f))
+
 ## [1.0.1](https://github.com/leonardoce/testconn/compare/v1.0.0...v1.0.1) (2022-12-22)
 
 
