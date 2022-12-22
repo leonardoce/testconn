@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/leonardoce/testconn/compare/v1.0.0...v1.0.1) (2022-12-22)
+
+
+### Bug Fixes
+
+* release workflow ([26c8f91](https://github.com/leonardoce/testconn/commit/26c8f914f6479e642157772c861763e9e96ad8bb))
+
 ## 1.0.0 (2022-12-22)
 
 
