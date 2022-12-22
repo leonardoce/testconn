@@ -15,3 +15,4 @@ jobs:
         with:
           release-type: go
           package-name: testconn
+          token: ${{secrets.REPO_PAT}}
