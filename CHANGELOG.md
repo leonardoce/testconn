@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/leonardoce/testconn/compare/v1.1.0...v1.2.0) (2022-12-22)
+
+
+### Features
+
+* split image building in separate workflow ([33e664b](https://github.com/leonardoce/testconn/commit/33e664bf07fb683ded27f193fc405494ee9d5162))
+
 ## [1.1.0](https://github.com/leonardoce/testconn/compare/v1.0.1...v1.1.0) (2022-12-22)
 
 
