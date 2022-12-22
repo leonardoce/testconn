@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/leonardoce/testconn/compare/v1.3.0...v1.4.0) (2022-12-22)
+
+
+### Features
+
+* use a personal access token for release-please ([26629e1](https://github.com/leonardoce/testconn/commit/26629e1c1a9681e6be14827f6975d11e0c3e0111))
+
 ## [1.3.0](https://github.com/leonardoce/testconn/compare/v1.2.0...v1.3.0) (2022-12-22)
 
 
