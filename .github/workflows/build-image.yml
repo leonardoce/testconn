@@ -5,7 +5,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-name: release-please
+name: build image
 jobs:
   build-image:
     runs-on: ubuntu-latest
