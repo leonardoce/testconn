@@ -11,3 +11,8 @@ jobs:
         with:
           release-type: go
           package-name: testconn
+      - run: make image
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          VERSION: ${{ steps.release.outputs.tag_name }}
+        name: "Docker image"
