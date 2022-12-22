@@ -7,4 +7,4 @@ if [ -z "$(which docker)" ]; then
     exit 1
 fi
 
-docker build -t dgdgo .
+docker build -t testconn:${VERSION:-latest} .
