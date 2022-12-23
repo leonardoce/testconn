@@ -6,7 +6,9 @@ It exposes just a few entrypoints:
 
 - `/ping` pings the database
 - `/readyz` pings the database
-- `/livez` just returns 200
+- `/livez` returns 200 if the probe is not failed, otherwise it will raise
+  an internal server error
+- `/fake` set the liveness probe to be faked
 
 This application must not be used as a reference, but it is just meant to
 explain the meaning of Kubernetes probes.

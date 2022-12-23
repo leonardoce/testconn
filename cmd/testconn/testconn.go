@@ -20,6 +20,9 @@ const pingTimeout = 1 * time.Second
 // db is the connection pool used by this application
 var db *sql.DB
 
+// fakeLiveness is true when the liveness probe is failing artificially
+var fakeLiveness bool
+
 // Run implements the "testconn" command
 func Run() error {
 	listenAddressDefault := os.Getenv("LISTEN_ADDRESSES")
@@ -52,6 +55,7 @@ func Run() error {
 	mux.HandleFunc("/readyz", readyzHandler)
 	mux.HandleFunc("/livez", livezHandler)
 	mux.HandleFunc("/ping", pingHandler)
+	mux.HandleFunc("/fake", fakeHandler)
 
 	server := &http.Server{
 		Addr:              *listenAddresses,
@@ -87,9 +91,22 @@ func readyzHandler(w http.ResponseWriter, r *http.Request) {
 
 // livezHandler handles the liveness probe for this application
 func livezHandler(w http.ResponseWriter, r *http.Request) {
+	if fakeLiveness {
+		w.WriteHeader(http.StatusInternalServerError)
+		fmt.Fprintf(w, "Liveness probe is faked")
+		return
+	}
+
 	// We simply return ok when we're able to listen for an
 	// HTTP request. This is reasonable: if we are not
 	// able to that, we need to be restarted
+	fmt.Fprintf(w, "OK")
+}
+
+// fakeHandler enables a fake liveness status, letting
+// the liveness probe fail
+func fakeHandler(w http.ResponseWriter, r *http.Request) {
+	fakeLiveness = true
 	fmt.Fprintf(w, "OK")
 }
 
