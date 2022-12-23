@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/pkg/errors"
@@ -21,14 +22,23 @@ var db *sql.DB
 
 // Run implements the "testconn" command
 func Run() error {
+	listenAddressDefault := os.Getenv("LISTEN_ADDRESSES")
+	if listenAddressDefault == "" {
+		listenAddressDefault = ":8000"
+	}
+	dsnDefault := os.Getenv("DSN")
+	if dsnDefault == "" {
+		dsnDefault = "dbname=postgres"
+	}
+
 	listenAddresses := flag.String(
 		"listenAddresses",
-		":8000",
+		listenAddressDefault,
 		"the IP addresses where we should listen to",
 	)
 	dsn := flag.String(
 		"dsn",
-		"dbname=postgres",
+		dsnDefault,
 		"the DSN where we should connect to",
 	)
 	flag.Parse()
@@ -44,10 +54,11 @@ func Run() error {
 	mux.HandleFunc("/ping", pingHandler)
 
 	server := &http.Server{
-		Addr:         *listenAddresses,
-		Handler:      NewLoggingDecorator(mux),
-		ReadTimeout:  10 * time.Second,
-		WriteTimeout: 10 * time.Second,
+		Addr:              *listenAddresses,
+		Handler:           NewLoggingDecorator(mux),
+		ReadTimeout:       10 * time.Second,
+		WriteTimeout:      10 * time.Second,
+		ReadHeaderTimeout: 10 * time.Second,
 	}
 
 	log.Printf("Starting web server: %s", *listenAddresses)
