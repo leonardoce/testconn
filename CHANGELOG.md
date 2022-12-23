@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/leonardoce/testconn/compare/v1.5.0...v1.6.0) (2022-12-23)
+
+
+### Features
+
+* allow faking the liveness probe ([23c7813](https://github.com/leonardoce/testconn/commit/23c7813a91853e7ea588a428d47cb57a1f7a153b))
+
 ## [1.5.0](https://github.com/leonardoce/testconn/compare/v1.4.0...v1.5.0) (2022-12-23)
 
 
