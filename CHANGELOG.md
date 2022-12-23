@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/leonardoce/testconn/compare/v1.4.0...v1.5.0) (2022-12-23)
+
+
+### Features
+
+* add Kubernetes definitions ([40d7d42](https://github.com/leonardoce/testconn/commit/40d7d42ae42a52aeec69a4d7c8937e3a172c74cd))
+* configuration from environment variable ([ccb256f](https://github.com/leonardoce/testconn/commit/ccb256f84558a4def9c0f3952b4e90aa3809199e))
+
+
+### Bug Fixes
+
+* linter messages ([affddec](https://github.com/leonardoce/testconn/commit/affddec397df4caf86261049f88281b6ea598d5c))
+
 ## [1.4.0](https://github.com/leonardoce/testconn/compare/v1.3.0...v1.4.0) (2022-12-22)
 
 
